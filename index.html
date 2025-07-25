@@ -38,7 +38,7 @@
     .card {
       position: relative;
       width: 100%;
-      height: 320px; /* ← YÜKSEKLİK ARTIRILDI */
+      height: 320px;
       margin: 15px 0;
       border-radius: 12px;
       overflow: hidden;
@@ -68,38 +68,32 @@
     }
 
     .card span {
-  position: relative; /* GEREKLİ */
-  z-index: 3;          /* GEREKLİ */
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-  padding: 15px 20px;
-}
-
-.card span::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: -100%;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, white, transparent);
-  transition: left 0.3s ease;
-}
-
-.card:hover span::after {
-  left: 100%;
-}
-
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 3;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
 
     .card:hover::before {
       transform: scale(1.05);
+    }
+
+    .card:hover span {
+      transform: scale(1.08);
+      text-shadow: 0 0 10px #ffffffaa, 0 0 20px #ffffff66;
     }
 
     @media screen and (max-width: 600px) {
       .card {
         height: 160px;
       }
+
       .card span {
         font-size: 18px;
       }
@@ -115,13 +109,12 @@
     <a href="https://linktw.in/tkQvLD" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/1.jpg');">
       <span>Sıfırdan Kali Linux Eğitimi</span>
     </a>
- 
 
     <a href="https://linktw.in/TtixMw" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/2.jpg');">
       <span>Hacker Eğitimi</span>
     </a>
 
-   <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
+    <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
       <span>Android Telefon & Oyun Hackleme Eğitimi</span>
     </a>
 
@@ -144,6 +137,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // ← Buraya takip kodunu ekle
+    gtag('config', 'G-XXXXXXX');
   </script>
 </body>
+</html>
