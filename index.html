@@ -12,23 +12,33 @@
       color: #fff;
       text-align: center;
     }
+
     .container {
       max-width: 800px;
       margin: auto;
       padding: 40px 20px;
     }
+
     img.profile {
       width: 120px;
       border-radius: 50%;
       margin-bottom: 20px;
     }
-    h1 { font-size: 28px; margin-bottom: 5px; }
-    p { font-size: 16px; margin-bottom: 30px; }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
 
     .card {
       position: relative;
       width: 100%;
-      height: 100px;
+      height: 160px; /* ← YÜKSEKLİK ARTIRILDI */
       margin: 15px 0;
       border-radius: 12px;
       overflow: hidden;
@@ -46,24 +56,28 @@
       background-position: center;
       z-index: 1;
       transition: transform 0.3s ease;
+      background-image: var(--img);
     }
 
     .card::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 2;
     }
 
     .card span {
       position: relative;
       z-index: 3;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       height: 100%;
-      line-height: 100px;
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
+      padding: 0 20px;
+      text-align: center;
     }
 
     .card:hover::before {
@@ -71,8 +85,12 @@
     }
 
     @media screen and (max-width: 600px) {
-      .card { height: 80px; }
-      .card span { font-size: 16px; line-height: 80px; }
+      .card {
+        height: 130px;
+      }
+      .card span {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -82,10 +100,10 @@
     <h1>Hacker</h1>
     <p>Siber Güvenlik Uzmanı - Eğitmen</p>
 
-    <a href="https://kurs1.com" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/1.jpg');">
-     <span>Kurs 1: Etik Hacker Eğitimi</span>
+    <a href="https://kurs1.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?hacking');">
+      <span>Kurs 1: Etik Hacker Eğitimi</span>
     </a>
-      
+
     <a href="https://kurs2.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?cybersecurity');">
       <span>Kurs 2: Zararlı Yazılım Geliştirme</span>
     </a>
@@ -107,20 +125,13 @@
     </a>
   </div>
 
-  <!-- Google Analytics (İsteğe bağlı) -->
+  <!-- Google Analytics (isteğe bağlı) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // Buraya GA kodunu ekle
+    gtag('config', 'G-XXXXXXX'); // ← Buraya takip kodunu ekle
   </script>
-
-  <style>
-    /* Dinamik arka planlar */
-    .card::before {
-      background-image: var(--img);
-    }
-  </style>
 </body>
 </html>
