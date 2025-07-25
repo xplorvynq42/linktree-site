@@ -102,6 +102,16 @@
       .card span {
         font-size: 22px;
       }
+
+      @media (hover: none) {
+      .card:hover::before,
+      .card:hover span {
+        transform: none;
+        bottom: 10px;
+        left: 10px;
+  }
+}
+
     }
   </style>
 </head>
