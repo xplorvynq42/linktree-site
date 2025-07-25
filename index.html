@@ -93,9 +93,20 @@
         font-size: 18px;
       }
       .card:hover::before {
-        transform: scale(1.08);
-        filter: brightness(1.1) contrast(1.1);
-      }
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.5) contrast(1.2);
+}
+.card:hover::after {
+  background: rgba(0, 0, 0, 0.2); /* karartmayı biraz azaltıyoruz */
+}
+.card span {
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.card:hover span {
+  transform: translateY(-5px);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
+}
+
     }
   </style>
 </head>
