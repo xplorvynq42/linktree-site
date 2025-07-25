@@ -68,17 +68,18 @@
     }
 
     .card span {
-      position: relative;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
       z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
       font-size: 22px;
       font-weight: bold;
-      padding: 0 20px;
-      text-align: center;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.6); /* opsiyonel arka plan efekti */
+      padding: 8px 12px;
+      border-radius: 6px;
     }
+
 
     .card:hover::before {
       transform: scale(1.05);
