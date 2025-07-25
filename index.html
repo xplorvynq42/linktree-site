@@ -2,22 +2,125 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacker - Link Sayfam</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Hacker | Kurslarım</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0d1117;
+      color: #fff;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    img.profile {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: 28px; margin-bottom: 5px; }
+    p { font-size: 16px; margin-bottom: 30px; }
+
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+
+    .card span {
+      position: relative;
+      z-index: 3;
+      display: block;
+      height: 100%;
+      line-height: 100px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .card:hover::before {
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 600px) {
+      .card { height: 80px; }
+      .card span { font-size: 16px; line-height: 80px; }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://via.placeholder.com/120" class="profile" alt="Profil">
+    <img src="https://via.placeholder.com/120" alt="Profil Foto" class="profile">
     <h1>Hacker</h1>
-    
-    <a class="btn big" href="#" style="background-image:url('https://via.placeholder.com/600x200')">Eğitim 1</a>
-    <a class="btn big" href="#" style="background-image:url('https://via.placeholder.com/600x200')">Eğitim 2</a>
-    
-    <a class="btn small" href="#" style="background-color:#238636;">Eğitim 3</a>
-    <a class="btn small" href="#" style="background-color:#2ea043;">Eğitim 4</a>
-    <a class="btn small" href="#" style="background-color:#0a66c2;">Eğitim 5</a>
-    <a class="btn small" href="#" style="background-color:#d14836;">Eğitim 6</a>
+    <p>Siber Güvenlik Uzmanı - Eğitmen</p>
+
+    <a href="https://kurs1.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?hacking');">
+      <span>Kurs 1: Etik Hacker Eğitimi</span>
+    </a>
+
+    <a href="https://kurs2.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?cybersecurity');">
+      <span>Kurs 2: Zararlı Yazılım Geliştirme</span>
+    </a>
+
+    <a href="https://kurs3.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?darkweb');">
+      <span>Kurs 3: Dark Web Uzmanlığı</span>
+    </a>
+
+    <a href="https://kurs4.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?linux');">
+      <span>Kurs 4: Linux Pentest</span>
+    </a>
+
+    <a href="https://kurs5.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?programming');">
+      <span>Kurs 5: Programlama Temelleri</span>
+    </a>
+
+    <a href="https://kurs6.com" class="card" style="--img:url('https://source.unsplash.com/800x600/?ethicalhacking');">
+      <span>Kurs 6: Red Team Senaryoları</span>
+    </a>
   </div>
+
+  <!-- Google Analytics (İsteğe bağlı) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // Buraya GA kodunu ekle
+  </script>
+
+  <style>
+    /* Dinamik arka planlar */
+    .card::before {
+      background-image: var(--img);
+    }
+  </style>
 </body>
 </html>
