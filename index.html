@@ -38,7 +38,7 @@
     .card {
       position: relative;
       width: 100%;
-      height: 340px;
+      height: 340px; /* ← YÜKSEKLİK ARTIRILDI */
       margin: 15px 0;
       border-radius: 12px;
       overflow: hidden;
@@ -46,7 +46,6 @@
       text-decoration: none;
       color: white;
       display: block;
-      transition: transform 0.2s ease;
     }
 
     .card::before {
@@ -56,7 +55,7 @@
       background-size: cover;
       background-position: center;
       z-index: 1;
-      transition: transform 0.3s ease, filter 0.3s ease;
+      transition: transform 0.3s ease;
       background-image: var(--img);
     }
 
@@ -78,31 +77,24 @@
       text-align: left;
       padding: 0;
       margin: 0;
-      transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
 
-    /* Hover efektleri */
+
+
     .card:hover::before {
-      transform: scale(1.08);
-      filter: brightness(1.2) saturate(1.4) contrast(1.1);
+      transform: scale(1.05);
     }
 
-    .card:hover span {
-      transform: translateY(-6px);
-      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
-    }
-
-    .card:active {
-      transform: scale(0.97);
-    }
-
-    /* Responsive için */
     @media screen and (max-width: 600px) {
       .card {
         height: 180px;
       }
       .card span {
         font-size: 18px;
+      }
+      .card:hover::before {
+        transform: scale(1.08);
+        filter: brightness(1.1) contrast(1.1);
       }
     }
   </style>
@@ -116,12 +108,13 @@
     <a href="https://linktw.in/tkQvLD" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/1.jpg');">
       <span>Sıfırdan Kali Linux Eğitimi</span>
     </a>
+ 
 
     <a href="https://linktw.in/TtixMw" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/2.jpg');">
       <span>Hacker Eğitimi</span>
     </a>
 
-    <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
+   <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
       <span>Android Telefon & Oyun Hackleme Eğitimi</span>
     </a>
 
@@ -138,13 +131,150 @@
     </a>
   </div>
 
-  <!-- Google Analytics (opsiyonel) -->
+  <!-- Google Analytics (isteğe bağlı) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
+    gtag('config', 'G-XXXXXXX'); // ← Buraya takip kodunu ekle
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker | Kurslarım</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0d1117;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    img.profile {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      height: 160px; /* ← YÜKSEKLİK ARTIRILDI */
+      margin: 15px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      transition: transform 0.3s ease;
+      background-image: var(--img);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    .card span {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .card:hover::before {
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 600px) {
+      .card {
+        height: 130px;
+      }
+      .card span {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/pp.jpg" alt="Profil Foto" class="profile">
+    <h1>Hacker</h1>
+    <p>Siber Güvenlik Uzmanı - Eğitmen</p>
+
+    <a href="https://linktw.in/tkQvLD" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/1.jpg');">
+      <span>Sıfırdan Kali Linux Eğitimi</span>
+    </a>
+ 
+
+    <a href="https://linktw.in/TtixMw" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/2.jpg');">
+      <span>Hacker Eğitimi</span>
+    </a>
+
+   <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
+      <span>Android Telefon & Oyun Hackleme Eğitimi</span>
+    </a>
+
+    <a href="https://kurs1.com" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/4.jpg');">
+      <span>Zararlı Yazılımlar ve Red Team Operasyonları</span>
+    </a>
+
+    <a href="https://linktw.in/UhzRWa" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/yt.jpg');">
+      <span>Critical Xpert Youtube Kanalım</span>
+    </a>
+
+    <a href="https://linktw.in/rhjQXk" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/cx.jpg');">
+      <span>Siber Xpert Youtube Kanalım</span>
+    </a>
+  </div>
+
+  <!-- Google Analytics (isteğe bağlı) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // ← Buraya takip kodunu ekle
   </script>
 </body>
 </html>
