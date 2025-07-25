@@ -38,7 +38,7 @@
     .card {
       position: relative;
       width: 100%;
-      height: 340px; /* ← YÜKSEKLİK ARTIRILDI */
+      height: 340px;
       margin: 15px 0;
       border-radius: 12px;
       overflow: hidden;
@@ -46,6 +46,7 @@
       text-decoration: none;
       color: white;
       display: block;
+      transition: transform 0.2s ease;
     }
 
     .card::before {
@@ -55,7 +56,7 @@
       background-size: cover;
       background-position: center;
       z-index: 1;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, filter 0.3s ease;
       background-image: var(--img);
     }
 
@@ -77,14 +78,25 @@
       text-align: left;
       padding: 0;
       margin: 0;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
     }
 
-
-
+    /* Hover efektleri */
     .card:hover::before {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      filter: brightness(1.2) saturate(1.4) contrast(1.1);
     }
 
+    .card:hover span {
+      transform: translateY(-6px);
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+    }
+
+    .card:active {
+      transform: scale(0.97);
+    }
+
+    /* Responsive için */
     @media screen and (max-width: 600px) {
       .card {
         height: 180px;
@@ -92,21 +104,6 @@
       .card span {
         font-size: 18px;
       }
-      .card:hover::before {
-  transform: scale(1.1);
-  filter: brightness(1.2) saturate(1.5) contrast(1.2);
-}
-.card:hover::after {
-  background: rgba(0, 0, 0, 0.2); /* karartmayı biraz azaltıyoruz */
-}
-.card span {
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-.card:hover span {
-  transform: translateY(-5px);
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.9);
-}
-
     }
   </style>
 </head>
@@ -119,13 +116,12 @@
     <a href="https://linktw.in/tkQvLD" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/1.jpg');">
       <span>Sıfırdan Kali Linux Eğitimi</span>
     </a>
- 
 
     <a href="https://linktw.in/TtixMw" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/2.jpg');">
       <span>Hacker Eğitimi</span>
     </a>
 
-   <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
+    <a href="https://linktw.in/oxyNcE" class="card" style="--img:url('https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/3.png');">
       <span>Android Telefon & Oyun Hackleme Eğitimi</span>
     </a>
 
@@ -142,13 +138,13 @@
     </a>
   </div>
 
-  <!-- Google Analytics (isteğe bağlı) -->
+  <!-- Google Analytics (opsiyonel) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX'); // ← Buraya takip kodunu ekle
+    gtag('config', 'G-XXXXXXX');
   </script>
 </body>
 </html>
