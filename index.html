@@ -67,22 +67,29 @@
       z-index: 2;
     }
 
-    .card span::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: -100%;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, white, transparent);
-      transition: left 0.3s ease;
-    }
+    .card span {
+  position: relative; /* GEREKLİ */
+  z-index: 3;          /* GEREKLİ */
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 15px 20px;
+}
+
+.card span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, white, transparent);
+  transition: left 0.3s ease;
+}
 
 .card:hover span::after {
   left: 100%;
-   }
-
-
+}
 
 
     .card:hover::before {
