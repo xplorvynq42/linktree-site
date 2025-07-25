@@ -128,9 +128,25 @@
     text-align: center;
     border-top: 1px solid #222;
     }
+    #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    opacity: 0.2; /* Arka planın görünürlüğünü ayarlarsın */
+}
+
   </style>
 </head>
 <body>
+    <video autoplay muted loop playsinline id="bg-video">
+    <source src="videon.mp4" type="video/mp4">
+    <!-- Alternatif kaynaklar eklenebilir (webm, ogg vs) -->
+    </video>
+
   <div class="container">
     <img src="https://raw.githubusercontent.com/xplorvynq42/linktree-site/main/pp.jpg" alt="Profil Foto" class="profile">
     <h1>Savash</h1>
