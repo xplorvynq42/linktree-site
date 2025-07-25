@@ -188,6 +188,9 @@
       text-decoration: none;
       color: white;
       display: block;
+      animation: pop 0.6s ease forwards;
+      animation-delay: calc(var(--i) * 0.1s); /* Sırayla animasyon */
+      opacity: 0;
     }
 
     .card::before {
@@ -233,6 +236,10 @@
       .card span {
         font-size: 18px;
       }
+      @keyframes pop {
+        0% { transform: scale(0.95); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+       }
     }
   </style>
 </head>
